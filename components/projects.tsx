@@ -40,21 +40,21 @@ export function Projects() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4"
+        className="space-y-4"
       >
-        {PROJECTS.map((project, i) => (
-          <motion.div
-            key={project.slug}
-            variants={itemVariants}
-            className={
-              i < 3
-                ? "lg:col-span-2"
-                : "lg:col-span-3"
-            }
-          >
-            <ProjectCard project={project} />
-          </motion.div>
-        ))}
+        {/* Hero project — Interconnect */}
+        <motion.div variants={itemVariants}>
+          <ProjectCard project={PROJECTS[0]} featured />
+        </motion.div>
+
+        {/* 2x2 grid for remaining projects */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {PROJECTS.slice(1).map((project) => (
+            <motion.div key={project.slug} variants={itemVariants}>
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

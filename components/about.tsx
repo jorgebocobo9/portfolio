@@ -6,7 +6,7 @@ export function About() {
       </p>
       <div className="max-w-[640px]">
         <p className="text-[#a3a3a3] text-sm leading-relaxed mb-3">
-          I&apos;m a software engineer based in the Philippines, currently finishing my
+          I&apos;m <span className="text-[#e5e5e5] font-medium">Jorge Garcia Bocobo</span> — a software engineer based in the Philippines, currently finishing my
           CS degree at UP Los Ba&ntilde;os while working full-time as the lead engineer
           at{" "}
           <span className="text-[#e5e5e5]">Mornings in the Lab Live Network</span>,

@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import type { Project } from "@/lib/projects";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [spotlightPos, setSpotlightPos] = useState({ x: 50, y: 50 });
 
@@ -20,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      className="group relative bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] overflow-hidden transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-indigo-500/30 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(99,102,241,0.1),0_0_0_1px_rgba(99,102,241,0.15)]"
+      className={`group relative bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] overflow-hidden transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-indigo-500/30 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(99,102,241,0.1),0_0_0_1px_rgba(99,102,241,0.15)] ${featured ? "lg:flex lg:flex-row" : ""}`}
     >
       {/* Spotlight glow */}
       <div
@@ -31,14 +31,14 @@ export function ProjectCard({ project }: { project: Project }) {
       />
 
       {/* Screenshot area */}
-      <div className="relative h-[140px] overflow-hidden">
+      <div className={`relative overflow-hidden ${featured ? "h-[200px] lg:h-auto lg:w-[45%] lg:min-h-[320px]" : "h-[140px]"}`}>
         <img
           src={project.screenshot}
           alt={project.alt}
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
         <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50 group-hover:opacity-70 transition-opacity`} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent" />
+        <div className={`absolute inset-0 ${featured ? "bg-gradient-to-t lg:bg-gradient-to-r" : "bg-gradient-to-t"} from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent`} />
         {project.isLive && (
           <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-1.5 bg-green-500/10 border border-green-500/15 text-green-400 px-2.5 py-0.5 rounded-full text-[0.65rem] font-medium">
             <span className="live-dot w-[5px] h-[5px] bg-green-400 rounded-full animate-[pulse-dot_2s_ease-in-out_infinite]" />
@@ -51,9 +51,9 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 p-4 pb-5">
-        <h3 className="text-base font-bold tracking-tight mb-1.5">{project.title}</h3>
-        <p className="text-[0.78rem] text-[#a3a3a3] leading-relaxed mb-3">{project.description}</p>
+      <div className={`relative z-20 p-4 pb-5 ${featured ? "lg:w-[55%] lg:p-6 lg:pb-6 lg:flex lg:flex-col lg:justify-center" : ""}`}>
+        <h3 className={`font-bold tracking-tight mb-1.5 ${featured ? "text-lg lg:text-xl" : "text-base"}`}>{project.title}</h3>
+        <p className={`text-[#a3a3a3] leading-relaxed mb-3 ${featured ? "text-sm" : "text-[0.78rem]"}`}>{project.description}</p>
 
         {/* Feature chips */}
         <div className="flex flex-wrap gap-1.5 mb-3">
@@ -65,9 +65,9 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {/* Tech details */}
-        <div className="bg-white/[0.02] border border-white/[0.04] rounded-lg p-2.5 mb-3">
+        <div className={`bg-white/[0.02] border border-white/[0.04] rounded-lg p-2.5 mb-3 ${featured ? "lg:grid lg:grid-cols-2 lg:gap-x-4" : ""}`}>
           {project.tech.map((t, i) => (
-            <div key={t.label} className={`flex gap-1.5 py-1 text-[0.7rem] ${i > 0 ? "border-t border-white/[0.03]" : ""}`}>
+            <div key={t.label} className={`flex gap-1.5 py-1 text-[0.7rem] ${!featured && i > 0 ? "border-t border-white/[0.03]" : ""} ${featured ? "lg:border-t-0 lg:py-1.5" : ""}`}>
               <span className="text-[#525252] min-w-[64px] shrink-0 font-medium">{t.label}</span>
               <span className="text-[#a3a3a3] font-mono text-[0.65rem]">{t.value}</span>
             </div>
