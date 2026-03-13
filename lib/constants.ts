@@ -3,7 +3,7 @@ export const SITE = {
   title: "JG Bocobo — Lead Software Engineer",
   description:
     "I build production web applications end-to-end. View my portfolio of 5 live apps spanning AI, real-time, and cloud infrastructure.",
-  url: "https://jgbocobo.vercel.app",
+  url: "https://portfolio-three-xi-jtt393frsc.vercel.app",
 } as const;
 
 export const SOCIALS = {
