@@ -1,6 +1,6 @@
 export const SITE = {
   name: "JG Bocobo",
-  title: "JG Bocobo — Lead Software Engineer",
+  title: "jgbocobo",
   description:
     "Lead software engineer who ships production systems at scale — from AI-powered platforms to live streaming networks. 5 live apps, 3 cloud platforms, and a track record of leading engineering teams.",
   url: "https://portfolio-three-xi-jtt393frsc.vercel.app",
