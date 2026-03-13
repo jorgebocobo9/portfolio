@@ -32,6 +32,11 @@ export function ProjectCard({ project }: { project: Project }) {
 
       {/* Screenshot area */}
       <div className="relative h-[140px] overflow-hidden">
+        <img
+          src={project.screenshot}
+          alt={project.alt}
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
         <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50 group-hover:opacity-70 transition-opacity`} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent" />
         {project.isLive && (
