@@ -17,11 +17,14 @@ export function Hero() {
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-[-0.05em] leading-none bg-gradient-to-r from-white via-white/80 to-indigo-400 bg-clip-text text-transparent mb-3">
           JG Bocobo
         </h1>
-        <p className="text-lg text-[#a3a3a3] mb-5">Lead Software Engineer</p>
-        <p className="text-sm text-[#525252] max-w-[480px] mx-auto leading-relaxed mb-7">
-          I turn ideas into live, revenue-ready web applications. From AI-powered
-          platforms to real-time streaming systems, I&apos;ve shipped 5 production apps
-          and lead a team of 2 senior engineers to do it.
+        <p className="text-lg text-[#a3a3a3] mb-1">Lead Software Engineer</p>
+        <span className="inline-block px-3 py-1 rounded-full text-[0.65rem] font-medium uppercase tracking-wider text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 mb-5">
+          Available for freelance
+        </span>
+        <p className="text-sm text-[#525252] max-w-[500px] mx-auto leading-relaxed mb-7">
+          I architect and ship production systems — AI platforms, live streaming
+          networks, and SaaS products. I&apos;ve built 5 apps serving real users
+          and led a team of senior engineers to do it.
         </p>
 
         {/* CTAs */}

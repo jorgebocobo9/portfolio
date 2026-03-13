@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SOCIALS } from "@/lib/constants";
 
 const NAV_LINKS = [
+  { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
@@ -35,7 +36,7 @@ export function Nav() {
   return (
     <nav className="sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-xl border-b border-white/[0.04]">
       <div className="max-w-[1200px] mx-auto px-8 h-[60px] flex items-center justify-between">
-        <span className="font-bold text-base tracking-tight">JG Bocobo</span>
+        <a href="#" className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm shadow-[0_2px_10px_rgba(99,102,241,0.3)]">J</a>
         <div className="flex items-center gap-7 text-sm text-[#737373]">
           {NAV_LINKS.map((link) => (
             <a

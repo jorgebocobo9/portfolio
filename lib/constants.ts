@@ -2,13 +2,13 @@ export const SITE = {
   name: "JG Bocobo",
   title: "JG Bocobo — Lead Software Engineer",
   description:
-    "I build production web applications end-to-end. View my portfolio of 5 live apps spanning AI, real-time, and cloud infrastructure.",
+    "Lead software engineer who ships production systems at scale — from AI-powered platforms to live streaming networks. 5 live apps, 3 cloud platforms, and a track record of leading engineering teams.",
   url: "https://portfolio-three-xi-jtt393frsc.vercel.app",
 } as const;
 
 export const SOCIALS = {
   github: "https://github.com/jorgebocobo9",
-  linkedin: "https://www.linkedin.com/in/jorge-bocobo-3341993a3/",
+  linkedin: "https://www.linkedin.com/in/jgbocobo/",
   email: "jorgebocobo9@gmail.com",
 } as const;
 
